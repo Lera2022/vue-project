@@ -1,55 +1,44 @@
-// import HomePage from "@pages/HomePage.vue";
-// import {createRouter, createWebHistory} from "vue-router";
-// import ProjectPage from "@pages/ProjectPage.vue";
-// import ProjectDetailsPage from "@pages/ProjectDetailsPage.vue";
-// import BlogPage from "@pages/BlogPage.vue";
-// import BlogDetailsPage from "@pages/BlogDetailsPage.vue";
-// import NotFoundPage from "@pages/NotFoundPage.vue";
-
-// const routes = [
-//   {path: "", component: HomePage},
-//   {path: "/", component: HomePage},
-//   {path: "/home", redirect: "/"},
-//   {path: "/index", redirect: "/"},
-//   {path: "/:pathMatch(.*)*", component: NotFoundPage},
-//   {path: "/project", component: ProjectPage},
-//   {path: "/project/:projectId", component: ProjectDetailsPage},
-//   {path: "/blog", component: BlogPage,},
-//   {path: "/blog/:blogId", component: BlogDetailsPage},
-// ];
-
-// export const router = createRouter({
-//   history: createWebHistory(),
-//   routes,
-// });
-
-// import Vue from 'vue'
-// import Router from 'vue-router'
-// import DashBoard from '@/pages/DashBoard.vue'
-// import AboutContent from '@/pages/AboutContent.vue'
-// import NotFound from '@/pages/NotFound.vue'
 import Vue from 'vue'
-import Router from 'vue-router'
-import BlogDetailsPage from '../pages/BlogDetailsPage.vue'
-import BlogPage from '../pages/BlogPage.vue'
-import HomePage from '../pages/HomePage.vue'
-import NotFoundPage from '../pages/NotFoundPage.vue'
-import ProjectDetailsPage from '../pages/ProjectDetailsPage.vue'
-import ProjectPage from '../pages/ProjectPage.vue'
+import VueRouter from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+import BlogView from '../views/BlogView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+const routes = [{
+        path: '/',
+        name: 'home',
+        component: HomeView
+    },
+    {
+        path: '/blogview',
+        name: 'BlogView',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/BlogView.vue')
+    },
+    {
+        path: '/404',
+        name: 'NotFoundView',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/NotFoundView.vue')
+    },
+    {
+        path: '*',
+        redirect: '/404'
+    },
+]
+
+const router = new VueRouter({
     mode: 'history',
-    routes: [
-        { path: "", component: HomePage },
-        { path: "/", component: HomePage },
-        { path: "/home", redirect: "/" },
-        { path: "/index", redirect: "/" },
-        { path: "/:pathMatch(.*)*", component: NotFoundPage },
-        { path: "/project", component: ProjectPage },
-        { path: "/project/:projectId", component: ProjectDetailsPage },
-        { path: "/blog", component: BlogPage, },
-        { path: "/blog/:blogId", component: BlogDetailsPage },
-    ]
+    base: process.env.BASE_URL,
+    routes
 })
+
+export default router

@@ -6,8 +6,14 @@
     </a>
     <nav>
       <ul class="nav__header">
-        <li v-for="([name, path]) in Object.entries(routes)">
-          <router-link :to="path" class="nav__link">{{ name[0].toUpperCase() + name.slice(1) }}</router-link>
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/projectview">Project</router-link>
+        </li>
+        <li>
+          <router-link to="/blogview">Blog</router-link>
         </li>
       </ul>
     </nav>
@@ -15,16 +21,22 @@
 </template>
 
 <script>
-
-import { navigationRoutes } from "../router/navigationRoutes.js";
-
 export default {
-  name: "InternoHeader",
+  name: 'Header',
+
   data() {
     return {
-      routes: navigationRoutes,
-    }
-  }
+
+    };
+  },
+
+  mounted() {
+
+  },
+
+  methods: {
+
+  },
 };
 </script>
 
