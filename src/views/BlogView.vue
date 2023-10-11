@@ -10,9 +10,11 @@
     <section class="latest center">
       <h2 class="heading__projects heading heading__latest">Latest Post</h2>
       <div class="wrapper__latest">
-        <img src="img/latest.jpg" alt="room">
+        <img src="../assets/img/latest.jpg" alt="room">
         <div class="wrapper__latest-text">
-          <h3 class="subheading subheading__latest">Low Cost Latest Invented Interior<br> Designing Ideas</h3>
+          <router-link to="/blogdetailsview">
+            <h3 class="subheading subheading__latest">Low Cost Latest Invented Interior<br> Designing Ideas</h3>
+          </router-link>
           <p class="desc__latest">Lorem ipsum dolor sit amet, adipiscing Aliquam<br> eu sem vitae turpis dignissim
             maximus.posuere<br> in.Contrary to popular belief.
           </p>
@@ -20,9 +22,9 @@
             Lorem Ipsum is not simply random text. It has<br> roots in a piece of classica.</p>
           <div class="article__wrapper">
             <p class="date">25 December,2022</p>
-            <a href="blog-details.html">
-              <img src="img/arrow.svg" width="52px" height="52px" alt="arrow" class="arrow__article">
-            </a>
+            <router-link to="/blogdetailsview">
+              <img src="../assets/img/arrow.svg" width="52px" height="52px" alt="arrow" class="arrow__article">
+            </router-link>
           </div>
         </div>
       </div>
@@ -30,29 +32,13 @@
 
     <section class="articles center">
       <h2 class="heading heading__articles_blog">Articles & News</h2>
-      <div id="app">
-        <div class="articles__wrapper">
-          <div v-for=" article in articles ">
-            <div class="article ">
-              <img :src="article.url" :alt="article.alt" class="img__article">
-              <h3 class="subheading subheading__article ">{{ article.subheading }}
-              </h3>
-              <div class="article__wrapper ">
-                <p class="date ">{{ article.date }}</p>
-                <a href="blog-details.html">
-                  <img src="img/arrow.svg " width="52px " height="52px " alt="arrow " class="arrow__article ">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ArticlesNews />
       <nav>
         <ul class="pagination">
-          <li class="pagination__item"><img src="img/1.svg" alt="1"></li>
-          <li class="pagination__item"><img src="img/2.svg" alt="2"></li>
-          <li class="pagination__item"><img src="img/3.svg" alt="3"></li>
-          <li><img src="img/parrow.svg" alt="arrow forward"></li>
+          <li class="pagination__item"><img src="../assets/img/1.svg" alt="1"></li>
+          <li class="pagination__item"><img src="../assets/img/2.svg" alt="2"></li>
+          <li class="pagination__item"><img src="../assets/img/3.svg" alt="3"></li>
+          <li><img src="../assets/img/parrow.svg" alt="arrow forward"></li>
         </ul>
       </nav>
     </section>
@@ -60,9 +46,10 @@
 </template>
 
 <script>
+import ArticlesNews from "../components/ArticlesNews.vue"
 export default {
-  name: 'VueProjectBlogView',
-
+  name: 'BlogView',
+  components: { ArticlesNews },
   data() {
     return {
 
@@ -79,4 +66,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.subheading__latest {
+  color: #292F36;
+  font-family: DM Serif Display;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  /* 31.25px */
+  letter-spacing: 0.5px;
+}
+</style>

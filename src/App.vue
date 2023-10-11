@@ -7,25 +7,30 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@font-face {
+  font-weight: 400;
+  /* Соответствует значению normal */
+  font-family: DM Serif Display, serif;
+  src: url("./assets/fonts/DMSerifDisplay-Regular.ttf");
 }
 
-nav {
-  padding: 30px;
+@font-face {
+  font-weight: 700;
+  /* Соответствует значению bold */
+  font-family: Jost, sans-serif;
+  src: url("./assets/fonts/Jost-Bold.ttf");
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+@font-face {
+  font-weight: 600;
+  font-family: Jost, sans-serif;
+  src: url("./assets/fonts/Jost-SemiBold.ttf");
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+@font-face {
+  font-weight: 400;
+  font-family: Jost, sans-serif;
+  src: url("./assets/fonts/Jost-Regular.ttf");
 }
 </style>
 

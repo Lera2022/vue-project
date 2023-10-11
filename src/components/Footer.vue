@@ -15,13 +15,13 @@
       <h3 class="subheading subheading__footer">Pages</h3>
       <ul class="nav_list">
         <li>
-          <a href="index.html">Home</a>
+          <router-link to="/">Home</router-link>
         </li>
         <li>
-          <a href="#">Project</a>
+          <router-link to="/projectview">Project</router-link>
         </li>
         <li>
-          <a href="blog.html">Blog</a>
+          <router-link to="/blogview">Blog</router-link>
         </li>
       </ul>
     </div>

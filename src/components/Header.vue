@@ -1,9 +1,9 @@
 <template>
   <header class="header center">
-    <a class="logo" href="index.html">
+    <router-link class="logo" to="/">
       <img src="../assets/img/Logo.svg" alt="Interno Logo">
       <h1 class="heading heading__logo">Interno</h1>
-    </a>
+    </router-link>
     <nav>
       <ul class="nav__header">
         <li>
