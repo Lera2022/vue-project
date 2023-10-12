@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-weight: 400;
+  /* Соответствует значению normal */
+  font-family: DM Serif Display, serif;
+  font-style: italic;
+  src: url("./assets/fonts/DMSerifDisplay-Italic.ttf");
+}
+
+@font-face {
   font-weight: 700;
   /* Соответствует значению bold */
   font-family: Jost, sans-serif;

@@ -25,8 +25,9 @@ export default {
 
 <template>
   <div class="details">
-    <PageHeader :image="headerImage" />
-    <div class="details__container">
+    <section class="top__blog pdv">
+    </section>
+    <div class="center">
       <div class="details__description">
         <h1 class="details__title">{{ article.title }}</h1>
         <p class="details__text" v-for="text in article.description.split('\n')">{{ text }}</p>
@@ -38,4 +39,36 @@ export default {
   </div>
 </template>
 
+<style>
+.pdv {
+  background-image: url('../assets/img/top__project-details.jpg');
+}
 
+.details__description {
+  margin: 0 auto;
+  max-width: 658px;
+}
+
+.details__title {
+  color: #292F36;
+  font-family: DM Serif Display;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  /* 62.5px */
+  letter-spacing: 1px;
+}
+
+.details__text {
+  color: #4D5053;
+  font-family: Jost;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 33px */
+  letter-spacing: 0.22px;
+  margin-bottom: 100px;
+}
+</style>

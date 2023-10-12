@@ -20,4 +20,35 @@ export default {
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.tags__title {
+  color: #292F36;
+  font-family: DM Serif Display;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  /* 31.25px */
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.tags__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+
+.tags__btn {
+  padding: 9px 30px;
+  border-radius: 10px;
+  border: none;
+  background: #F4F0EC;
+
+  &:first-child {
+    background-color: black;
+    color: white;
+  }
+}
+</style>

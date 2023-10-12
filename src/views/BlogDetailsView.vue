@@ -28,11 +28,8 @@ export default {
 
 
 <template>
-  <div>
+  <div class="center">
     <section class="top__blog bdv">
-      <div class="wrapper__blog">
-
-      </div>
     </section>
     <div class="blog">
       <div class="blog__container">
@@ -50,5 +47,11 @@ export default {
 <style scoped lang="scss">
 .bdv {
   background-image: url('../assets/img/top__blog-details.jpg');
+}
+
+.blog__container {
+  display: flex;
+  gap: 52px;
+  margin-bottom: 96px;
 }
 </style>

@@ -6,10 +6,23 @@ export default {
 
 <template>
   <div class="divider">
-    <h2 class="divider__title">"</h2>
-    <p class="divider__text">The details are not the details.
+    <img src="../assets/img/“.jpg" alt="">
+    <p class="divider__text">The details are not the details.<br>
       They make the design.</p>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.divider {
+  color: #CDA274;
+  text-align: center;
+  font-family: DM Serif Display;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 125%;
+  /* 31.25px */
+  letter-spacing: 0.5px;
+  padding: 53px;
+}
+</style>

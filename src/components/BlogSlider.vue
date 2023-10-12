@@ -40,4 +40,54 @@ export default {
   </div>
 </template>
 
+<style scoped
+       lang="scss">
+       .slider {
+         &__image {
+           margin-bottom: 25px;
+           position: relative;
 
+           &:hover {
+             .slider__zoom {
+               display: flex;
+             }
+           }
+
+           img {
+             border-radius: 70px;
+           }
+         }
+
+         &__zoom {
+
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           display: none;
+           justify-content: center;
+           align-items: center;
+           cursor: pointer;
+           border: none;
+           outline: none;
+         }
+
+         &__buttons {
+           display: flex;
+           gap: 10px;
+           max-width: max-content;
+           margin: 0 auto;
+           margin-bottom: 108px;
+         }
+
+         &__btn {
+
+           width: 20px;
+           height: 20px;
+           display: block;
+           border: 2px solid black;
+           background-color: #fff;
+           cursor: pointer;
+         }
+       }
+</style>
